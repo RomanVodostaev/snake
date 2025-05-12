@@ -5,7 +5,7 @@ class Snake:
         self.y = y
         self.symbol = 'o'
         self.body = [(x, y)]
-        self.direction = 'right'
+        self.direction = 'RIGHT'
 
     def get_coords(self):
         return self.body
