@@ -3,7 +3,7 @@ import time
 import keyboard
 import os
 
-class Snake:
+class Snake2:
     def __init__(self, x, y):
         self.x = x
         self.y = y
