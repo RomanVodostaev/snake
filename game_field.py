@@ -9,9 +9,8 @@ class GameField:
         self.snake = Snake(width // 2, height // 2)
     
     def render(self):
-        # TODO: during render clear the screan before renderign new characters
+        self.clear_screan()
         
-        os.system('cls' if os.name == 'nt' else 'clear')
         for y in range(self.height):
             for x in range(self.width):
                 if x == 0 or x == self.width - 1 or y == 0 or y == self.height - 1:
@@ -34,3 +33,7 @@ class GameField:
             self.snake.direction = 'LEFT'
         elif keyboard.is_pressed('right') and self.snake.direction != 'LEFT':
             self.snake.direction = 'RIGHT'
+            
+    def clear_screan(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
+
