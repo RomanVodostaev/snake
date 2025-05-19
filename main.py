@@ -4,31 +4,13 @@ import time
 from game_field import GameField
 from plot_point import PlotPoint
 from screen_renderer import ScreenRenderer
+from snake import Snake
 
-field = GameField(20, 10)
-
-points = [
-    PlotPoint(0, 0, "*"),
-    PlotPoint(0, 1, "*"),
-    PlotPoint(0, 2, "*"),
-    PlotPoint(0, 3, "*"),
-    
-    PlotPoint(1, 0, "*"),
-    PlotPoint(2, 0, "*"),
-    PlotPoint(3, 0, "*"),
-    
-    
-    PlotPoint(3, 1, "*"),
-    PlotPoint(3, 2, "*"),
-    PlotPoint(3, 3, "*"),
-    
-    
-    PlotPoint(1, 3, "*"),
-    PlotPoint(2, 3, "*"),
-]
+field = GameField(64, 12)
+snake = Snake(PlotPoint(10, 3, "Q"))
 
 renderer = ScreenRenderer()
-renderer.render(points)
+renderer.render(field.points + snake.points)
 
 # try:
 #     while True:

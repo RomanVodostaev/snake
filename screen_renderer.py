@@ -16,8 +16,8 @@ class ScreenRenderer:
                 
             points_dict[(p.x, p.y)] = p
         
-        for plot_x in range(max_x + 1):
-            for plot_y in range(max_y + 1):
+        for plot_y in range(max_y + 1):
+            for plot_x in range(max_x + 1):
                 plot_key = (plot_x, plot_y)
                 if plot_key in points_dict:
                     print(points_dict[plot_key].character, end="")
