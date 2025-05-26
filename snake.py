@@ -1,6 +1,13 @@
 from plot_point import PlotPoint
 
 
+class SnakeMoveDierection:
+    UP = "UP"
+    DOWN = "DOWN"
+    LEFT = "LEFT"
+    RIGHT = "RIGHT"
+    
+
 class Snake:
     def __init__(self, head_point: PlotPoint):
         self.points: list[PlotPoint] = []
@@ -15,22 +22,23 @@ class Snake:
     
         self.direction = 'RIGHT'
 
-    # def get_coords(self):
-    #     return self.body
-        
-    # def move(self):
-    #     head_x, head_y = self.body[0]
-    #     if self.direction == 'UP':
-    #         new_head = (head_x, head_y - 1)
-    #     elif self.direction == 'DOWN':
-    #         new_head = (head_x, head_y + 1)
-    #     elif self.direction == 'LEFT':
-    #         new_head = (head_x - 1, head_y)
-    #     elif self.direction == 'RIGHT':
-    #         new_head = (head_x + 1, head_y)
-        
-    #     self.body.insert(0, new_head)
-    #     self.body.pop()
+    def move(self, direction: str):
+        for index in range(len(self.points) - 1, -1, -1):
+            if index == 0:
+                if direction == SnakeMoveDierection.UP:
+                    self.points[index].move(0, -1)
+                elif direction == SnakeMoveDierection.DOWN:
+                    self.points[index].move(0, 1)
+                elif direction == SnakeMoveDierection.LEFT:
+                    self.points[index].move(-1, 0)
+                elif direction == SnakeMoveDierection.RIGHT:
+                    self.points[index].move(1, 0)
+                
+                break
+            
+            prev_index = index-1
+            self.points[index].set(self.points[prev_index].x, self.points[prev_index].y)
 
     # def grow(self):
     #     self.body.append(self.body[-1])
+

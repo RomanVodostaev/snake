@@ -1,6 +1,11 @@
 from plot_point import PlotPoint
+import os
 
 class ScreenRenderer:
+    def clear_screan(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+    
     def render(self, points: list[PlotPoint]):
         
         max_x = 0
