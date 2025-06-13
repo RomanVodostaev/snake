@@ -1,4 +1,3 @@
-
 import time
 
 from game_field import GameField
@@ -27,11 +26,9 @@ try:
     while True:
         renderer.clear_screan()
         
-        
-        
         snake.move(snake_state["direction"])
-        
+
         renderer.render(field.points + snake.points)
-        time.sleep(0.2)
+        time.sleep(0.15)
 except KeyboardInterrupt:
     print("\nGame over")
