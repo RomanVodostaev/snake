@@ -14,6 +14,6 @@ sudo python ./main.py
 ```
 
 or on Windows use Admin cmd
-```cmd
+```bash
 python ./main.py
 ```
