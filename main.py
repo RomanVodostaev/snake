@@ -14,21 +14,53 @@ renderer = ScreenRenderer()
 
 snake_direction = SnakeMoveDierection.LEFT
 
-snake_state = {"direction": SnakeMoveDierection.LEFT}
+def move_up(): 
+    global snake_direction
+    
+    if snake_direction == SnakeMoveDierection.DOWN:
+        return
+    
+    snake_direction = SnakeMoveDierection.UP
 
-keyboard.add_hotkey('down', lambda: snake_state.update({"direction": SnakeMoveDierection.DOWN}))
-keyboard.add_hotkey('left', lambda: snake_state.update({"direction": SnakeMoveDierection.LEFT}))
-keyboard.add_hotkey('right', lambda: snake_state.update({"direction": SnakeMoveDierection.RIGHT}))
-keyboard.add_hotkey('up', lambda: snake_state.update({"direction": SnakeMoveDierection.UP}))
-# keyboard.wait()
+def move_left(): 
+    global snake_direction
+    
+    if snake_direction == SnakeMoveDierection.RIGHT:
+        return
+    
+    snake_direction = SnakeMoveDierection.LEFT
+    
+def move_right(): 
+    global snake_direction
+    
+    if snake_direction == SnakeMoveDierection.LEFT:
+        return
+
+    snake_direction = SnakeMoveDierection.RIGHT
+    
+def move_down(): 
+    global snake_direction
+    
+    if snake_direction == SnakeMoveDierection.UP:
+        return
+
+    snake_direction = SnakeMoveDierection.DOWN
+
+
+keyboard.add_hotkey('down', move_down)
+keyboard.add_hotkey('left', move_left)
+keyboard.add_hotkey('right', move_right)
+keyboard.add_hotkey('up', move_up)
 
 try:
     while True:
         renderer.clear_screan()
-        
-        snake.move(snake_state["direction"])
-
         renderer.render(field.points + snake.points)
+        
+        snake.move(snake_direction)
+
+        
+
         time.sleep(0.15)
 except KeyboardInterrupt:
     print("\nGame over")
