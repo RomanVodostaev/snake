@@ -9,7 +9,12 @@ Demo project to learn development on python and raspberry pi
 
 ### Demo
 
-[Demo video](./docs/demo.mp4)
+[Full demo video is here](./docs/demo.mp4)
+
+#### Screens
+
+![](./docs/1.png)
+![](./docs/2.png)
 
 ## How to run
 
