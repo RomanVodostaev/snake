@@ -1,0 +1,2 @@
+class SnakeCollapsedWithObjectError(Exception):
+    pass

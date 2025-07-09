@@ -30,3 +30,4 @@ class ScreenRenderer:
                     print(" ", end="")
 
             print()
+            
