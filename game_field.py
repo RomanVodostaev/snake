@@ -13,12 +13,12 @@ class GameField:
         for hi in range(height):
             for wi in range(width):
                 if hi == 0:
-                    self.points.append(PlotPoint(wi, hi, "*"))
+                    self.points.append(PlotPoint(wi, hi, "_"))
                 else:
                     if wi == 0:
-                        self.points.append(PlotPoint(wi, hi, "*"))
+                        self.points.append(PlotPoint(wi, hi, "|"))
                     if wi == width - 1:  
-                        self.points.append(PlotPoint(wi, hi, "*"))
+                        self.points.append(PlotPoint(wi, hi, "|"))
                     if hi == height - 1:
-                        self.points.append(PlotPoint(wi, hi, "*"))
+                        self.points.append(PlotPoint(wi, hi, "-"))
 
